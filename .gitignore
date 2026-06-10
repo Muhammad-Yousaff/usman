@@ -1,0 +1,27 @@
+# Dependency directories
+node_modules/
+**/node_modules/
+
+# Local env files
+.env
+**/.env
+
+# Local upload files
+uploads/
+**/uploads/
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.system_generated/
+*.log
+
+# Build files
+dist/
+build/
+
+# Temp files
+.tempmediaStorage/
+.DS_Store
+Thumbs.db
