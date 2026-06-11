@@ -90,7 +90,7 @@ const Apply = ({ setIsApplyOpen, companyInfo }) => {
                 <h1 className="text-2xl font-semibold mb-4">Apply for Job</h1>
                 {isLoading ? (
                     <div className="flex justify-center items-center">
-                        <img src="/images/loader.gif" alt="Loading..." style={{ height: "300px" }} />
+                        <img src={process.env.PUBLIC_URL + "/images/loader.gif"} alt="Loading..." style={{ height: "300px" }} />
                     </div>
                 ) : (
                     <form onSubmit={handleSubmit}>

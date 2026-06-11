@@ -142,7 +142,7 @@ const Home = () => {
           <div className="bg-white p-4 rounded-sm md:col-span-2">
             {isLoading ? (
               <div className="flex justify-center items-center">
-                <img src="/images/loader.gif" alt="Loading..." style={{ height: "100px" }} />
+                <img src={process.env.PUBLIC_URL + "/images/loader.gif"} alt="Loading..." style={{ height: "100px" }} />
               </div>
             ) : filteredItems.length > 0 ? (
               <div className="grid gap-4">

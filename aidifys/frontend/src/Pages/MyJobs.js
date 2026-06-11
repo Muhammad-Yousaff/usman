@@ -160,7 +160,7 @@ export const MyJobs = () => {
                                     <tbody>
                                         <tr>
                                             <td colSpan="6" className="text-center py-4">
-                                                <img src="/images/loader.gif" alt="Loading..." style={{ height: "150px", margin: "auto", display: "block" }} />
+                                                <img src={process.env.PUBLIC_URL + "/images/loader.gif"} alt="Loading..." style={{ height: "150px", margin: "auto", display: "block" }} />
                                             </td>
                                         </tr>
                                     </tbody>

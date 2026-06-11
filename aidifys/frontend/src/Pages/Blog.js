@@ -109,7 +109,7 @@ const Blog = () => {
         <div className="pt-28 pb-20 bg-tertiary mb-28">
           {loading ? (
             <div className="flex justify-center items-center mt-28">
-              <img src="/images/loader.gif" alt="Loading..." style={{ height: "100px" }} />
+              <img src={process.env.PUBLIC_URL + "/images/loader.gif"} alt="Loading..." style={{ height: "100px" }} />
             </div>
           ) : error ? (
             <div className="text-center text-red-500">Error loading blogs: {error}</div>

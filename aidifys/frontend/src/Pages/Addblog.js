@@ -144,7 +144,7 @@ const Addblog = () => {
       </form>
       {isLoading && (
         <div className="flex justify-center items-center mt-28 absolute inset-0 bg-opacity-50 bg-gray-700 z-50">
-          <img src="/images/loader.gif" alt="Loading..." style={{ height: "100px" }} />
+          <img src={process.env.PUBLIC_URL + "/images/loader.gif"} alt="Loading..." style={{ height: "100px" }} />
         </div>
       )}
       <Toaster />
