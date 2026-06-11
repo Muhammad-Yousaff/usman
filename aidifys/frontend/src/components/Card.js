@@ -122,7 +122,7 @@ const Card = ({ data }) => {
           >
             <div className="w-20 h-20 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-44 lg:h-44 flex-shrink-0">
               <img
-                src={image}
+                src={image && (image.startsWith("http") ? image : `${BASE_URL}${image}`)}
                 alt={companyName}
                 className="w-full h-full object-cover"
               />

@@ -114,7 +114,7 @@ const JobDetails = () => {
                             <h2 className="text-xl md:text-2xl font-bold mb-4">Company Information</h2>
                         </div>
                         <div className='flex justify-center'>
-                            <img src={job?.image} alt={job?.companyName} className='w-44 h-44' />
+                            <img src={job?.image && (job.image.startsWith("http") ? job.image : `${BASE_URL}${job.image}`)} alt={job?.companyName} className='w-44 h-44' />
                         </div>
                         <h3 className="text-lg md:text-xl font-semibold mb-2 mt-3 ">
                             <Link to={`/company-jobs/${job?.companyId}`}>{job?.companyName}</Link>

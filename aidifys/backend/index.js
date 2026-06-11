@@ -50,13 +50,15 @@ prerender.set('prerenderToken', '');
 app.use(express.json());
 app.use(cors());
 app.use(prerender);
-// Multer configuration for file uploads saved to 'uploads' directory
-const upload = multer({ dest: 'uploads/' });
+// Multer configuration for file uploads saved to 'uploads' directory (use system temp dir on Vercel)
+const os = require('os');
+const uploadDir = process.env.VERCEL ? os.tmpdir() : 'uploads/';
+const upload = multer({ dest: uploadDir });
 // (Optional) memory storage for other uses
 const storage = multer.memoryStorage();
 const imageUpload = multer({ storage: storage });
 // Serve uploaded files statically
-app.use('/uploads', express.static('uploads'));
+app.use('/uploads', express.static(uploadDir));
 const logoUrl = "";
 
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');

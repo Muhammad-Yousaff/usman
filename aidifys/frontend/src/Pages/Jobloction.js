@@ -70,13 +70,13 @@ const Jobloction = () => {
             <section key={job._id} className='card border border-gray-300 rounded mb-4 hover:shadow-lg p-3'>
                 <Link to={`/job/${job?.slug}`} className='flex flex-row sm:flex-row items-start gap-4 p-1 sm:p-2 lg:p-3'>
                     <div className='w-20 h-20 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-44 lg:h-44 flex-shrink-0'>
-                        <img src={job?.image} alt={job?.companyName} className="w-full h-full object-cover" />
+                        <img src={job?.image && (job.image.startsWith("http") ? job.image : `${BASE_URL}${job.image}`)} alt={job?.companyName} className="w-full h-full object-cover" />
                     </div>
                     <div>
                         <h4 className='text-primary mb-1 text-base sm:text-sm lg:text-xl'>{job?.companyName}</h4>
                         <h3 className='sm:text-sm lg:text-xl font-semibold'>{job?.jobTitle}</h3>
                         <h6 className='sm:text-sm lg:text-xl font-semibold'>
-                            {job?.skills && job?.skills.join(', ')}
+                            {Array.isArray(job?.skills) ? job.skills.join(', ') : job?.skills || ''}
                         </h6>
                         <div className='text-primary/70 text-sm sm:text-base flex flex-wrap sm:flex-row flex-row gap-1 font-bold'>
                             <span className='flex items-center gap-1'><FiMapPin /> {job?.jobLocation}</span>

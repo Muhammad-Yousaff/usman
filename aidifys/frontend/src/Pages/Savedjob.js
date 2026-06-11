@@ -157,8 +157,8 @@ const Savedjob = () => {
                     className="flex flex-row sm:flex-row items-start gap-4"
                   >
                     <div className="w-20 h-20 sm:w-32 sm:h-32 flex-shrink-0">
-                      <img
-                        src={job?.image}
+                       <img
+                        src={job?.image && (job.image.startsWith("http") ? job.image : `${BASE_URL}${job.image}`)}
                         alt={job?.companyName}
                         className="w-full h-full object-cover"
                       />
@@ -167,7 +167,7 @@ const Savedjob = () => {
                       <div>
                         <h4 className="text-primary mb-1 text-base font-semibold">{job?.companyName}</h4>
                         <h3 className="text-xl font-bold">{job?.jobTitle}</h3>
-                        <p className="text-sm text-gray-600">{job?.skills?.join(', ')}</p>
+                        <p className="text-sm text-gray-600">{Array.isArray(job?.skills) ? job.skills.join(', ') : job?.skills || ''}</p>
                         <div className="text-primary/70 text-sm flex flex-wrap gap-2 font-bold">
                           <span className="flex items-center gap-1">
                             <FiMapPin /> {job?.jobLocation}
