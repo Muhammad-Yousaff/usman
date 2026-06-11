@@ -71,7 +71,7 @@ const BlogCard = ({ article, onDelete }) => {
         </Helmet>
         <div className="bg-white shadow-lg overflow-hidden flex flex-col h-full rounded-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
           <img
-            src={article?.imageUrl}
+            src={article?.imageUrl && (article.imageUrl.startsWith("http") ? article.imageUrl : `${process.env.PUBLIC_URL}${article.imageUrl}`)}
             alt={article?.alttag}
             className="w-full h-48 object-cover rounded-t-lg"
           />

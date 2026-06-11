@@ -80,7 +80,7 @@ const Blogdetail = () => {
                         <div className="lg:col-span-2">
                             <div className="mb-6">
                                 <img
-                                    src={blogData?.imageUrl}
+                                    src={blogData?.imageUrl && (blogData.imageUrl.startsWith("http") ? blogData.imageUrl : `${process.env.PUBLIC_URL}${blogData.imageUrl}`)}
                                     alt={blogData?.alttag}
                                     title={blogData?.alttag}
                                     className="w-full h-auto rounded-lg shadow-lg cursor-pointer"
