@@ -95,7 +95,7 @@ const BlogCard = ({ article, onDelete }) => {
                   Read more
                 </button>
               </Link>
-              {userEmail === "usama.mang0901@gmail.com" && (
+              {userEmail === "mianaliusman004@gmail.com" && (
                 <button
                   onClick={handleDelete}
                   className="text-white bg-red-600 font-semibold hover:bg-red-900 px-4 py-2 rounded"

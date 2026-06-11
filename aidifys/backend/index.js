@@ -100,7 +100,7 @@ async function run() {
     const otpCollection = db.collection("otp");
     const blogsCollection = db.collection("blogs");
     const subscribersCollection = db.collection("subscribers");
-    const SUPER_ADMIN_EMAIL = "usama.mang0901@gmail.com";
+    const SUPER_ADMIN_EMAIL = "mianaliusman004@gmail.com";
 
 
     async function generateUniqueSlug(jobTitle, existingId = null) {
@@ -192,7 +192,7 @@ async function run() {
 
         body._id = new ObjectId(body._id);
         body.updatedAt = new Date();
-        body.superAdminEmail = body.superAdminEmail || "usama.mang0901@gmail.com";
+        body.superAdminEmail = body.superAdminEmail || "mianaliusman004@gmail.com";
 
         if (body.jobTitle) {
           body.slug = await generateUniqueSlug(body.jobTitle, body._id);

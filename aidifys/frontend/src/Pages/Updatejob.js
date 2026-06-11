@@ -31,7 +31,7 @@ const Updatejob = () => {
     data.skills = selectedOptions.map(option => option.value);
     data._id = id;
     data.userId = userId;
-    data.superAdminEmail = "usama.mang0901@gmail.com";
+    data.superAdminEmail = "mianaliusman004@gmail.com";
 
     fetch(`${BASE_URL}/update-job`, {
       method: "POST",

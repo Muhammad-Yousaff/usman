@@ -94,7 +94,7 @@ const Blog = () => {
               <h1 className="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl uppercase font-heading md:leading-[70px]">
                 OUR BLOG
               </h1>
-              {userEmail === "usama.mang0901@gmail.com" && (
+              {userEmail === "mianaliusman004@gmail.com" && (
                 <button
                   onClick={() => navigate("/add-blog")}
                   className="bg-sky-500 font-semibold text-white px-4 py-2 rounded hover:bg-sky-700 mt-3"
